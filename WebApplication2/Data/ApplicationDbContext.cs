@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using WebApplication2.Models;
 
 namespace WebApplication2.Data
 {
@@ -12,5 +13,6 @@ namespace WebApplication2.Data
             : base(options)
         {
         }
+        public DbSet<WebApplication2.Models.Profe> Profe { get; set; }
     }
 }

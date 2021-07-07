@@ -12,6 +12,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApplication2.Data;
+using WebApplication2.Models;
+using WebApplication2.Services;
 
 namespace WebApplication2
 {
@@ -31,7 +33,8 @@ namespace WebApplication2
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
-
+            services.AddTransient<IMailService, Services.MailService>();
+            services.Configure<MailSettings>(Configuration.GetSection("MailSettings"));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
