@@ -10,22 +10,22 @@ using WebApplication2.Models;
 
 namespace WebApplication2.Controllers
 {
-    public class ProfesController : Controller
+    public class ProfeController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public ProfesController(ApplicationDbContext context)
+        public ProfeController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Profes
+        // GET: Profe
         public async Task<IActionResult> Index()
         {
             return View(await _context.Profe.ToListAsync());
         }
 
-        // GET: Profes/Details/5
+        // GET: Profe/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -43,13 +43,13 @@ namespace WebApplication2.Controllers
             return View(profe);
         }
 
-        // GET: Profes/Create
+        // GET: Profe/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Profes/Create
+        // POST: Profe/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -65,7 +65,7 @@ namespace WebApplication2.Controllers
             return View(profe);
         }
 
-        // GET: Profes/Edit/5
+        // GET: Profe/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -81,7 +81,7 @@ namespace WebApplication2.Controllers
             return View(profe);
         }
 
-        // POST: Profes/Edit/5
+        // POST: Profe/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -116,7 +116,7 @@ namespace WebApplication2.Controllers
             return View(profe);
         }
 
-        // GET: Profes/Delete/5
+        // GET: Profe/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -134,7 +134,7 @@ namespace WebApplication2.Controllers
             return View(profe);
         }
 
-        // POST: Profes/Delete/5
+        // POST: Profe/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
