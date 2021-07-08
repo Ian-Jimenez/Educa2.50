@@ -8,12 +8,5 @@ namespace WebApplication2.Models
         public String Nombre { get; set; }
         public String Telefono { get; set; }
 
-        public enum Materia
-        {
-            lenguaje,
-            Matematicas,
-            Quimica,
-            Historia
-        }
     }
 }
